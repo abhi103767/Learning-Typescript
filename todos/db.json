@@ -70,5 +70,16 @@
       "status": false,
       "title": "to the leaing with teh "
     }
+  ],
+  "computers": [
+    {
+      "id": "GNhs8ao5UBJc1GYXvKMaE",
+      "model": "x3x2",
+      "makeyear": "212121",
+      "operatingsystem": "Window",
+      "screenheight": "1000",
+      "screenwidth": "1000",
+      "price": "80000"
+    }
   ]
 }
