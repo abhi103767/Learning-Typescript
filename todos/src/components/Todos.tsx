@@ -10,6 +10,8 @@ type TodoSchema = {
     title : string
 }
 
+
+
 function Todos() {
     const [text,setText] = useState('');
     const [todos,setTodos] = useState<TodoSchema[]>([]);
