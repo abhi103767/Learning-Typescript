@@ -9,7 +9,9 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build" : "tsc index.ts"
+    "build" : "tsc index.ts",
+    "build:watch" : "tsc index.ts --watch"
+    
   },
   "repository": {
     "type": "git",
