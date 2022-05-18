@@ -24,7 +24,7 @@ type FormData = {
 function Computer() {
 
     const [formData,setFormData] = useState<FormData>({
-    'id' : nanoid(),
+    'id' : '',
     'model' : '', 
    'makeyear': null,
 'operatingsystem' : '',
@@ -40,7 +40,7 @@ function Computer() {
 
     useEffect(() => {
         getData()
-    })
+    },[])
 
    console.log(formData)
     function handleChange(e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>):void{
@@ -53,9 +53,11 @@ function Computer() {
     
     }
     function handleClick(e:React.MouseEvent<HTMLButtonElement>){
-  axios.post('http://localhost:8080/computers', formData).then(
+  axios.post('http://localhost:8080/computers', {...formData, id : nanoid()}).then(
                (res) => {
                    console.log(res.data)
+                   getData();
+
                }
            )
         //    console.log(list)
@@ -65,7 +67,7 @@ function Computer() {
             axios.get('http://localhost:8080/computers')
             .then( (response : AxiosResponse<FormData[]>) => {
                 const   {data}  = response;
-               setList(data);
+               setList([...data]);
                  }); 
         }
       
@@ -153,13 +155,9 @@ function Computer() {
            variant='outlined' onClick={handleClick}>Save Data</Button>
       </Box>
 
-      <Box>
-          {
-             list.map((item) => {
-              return   <List formData={formData}/>
-             }) 
-          }
-      </Box>
+      <div>
+          <List formData={list} />
+      </div>
           
     </div>
   )

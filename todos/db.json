@@ -80,6 +80,60 @@
       "screenheight": "1000",
       "screenwidth": "1000",
       "price": "80000"
+    },
+    {
+      "id": "GNhs8ao5UBJc1GYXvKMaE",
+      "model": "x3x2",
+      "makeyear": "212121",
+      "operatingsystem": "Window",
+      "screenheight": "1000",
+      "screenwidth": "1000",
+      "price": "80000"
+    },
+    {
+      "id": "6Bxkoob_SHzxufMFCR8YR",
+      "model": "",
+      "makeyear": null,
+      "operatingsystem": "",
+      "screenheight": null,
+      "screenwidth": null,
+      "price": null
+    },
+    {
+      "id": "ZmgmNvcMFi61ZLwC4fo8q",
+      "model": "Avinash",
+      "makeyear": "2300",
+      "operatingsystem": "mera computer",
+      "screenheight": "2134143104",
+      "screenwidth": "123941294",
+      "price": ""
+    },
+    {
+      "id": "i9T4NtGft9_I6Uh8COQDx",
+      "model": "",
+      "makeyear": null,
+      "operatingsystem": "",
+      "screenheight": null,
+      "screenwidth": null,
+      "price": null
+    },
+    {
+      "id": "GBaK808ciOU-vWBg07hbE",
+      "model": "r4r4r4",
+      "makeyear": "2020",
+      "operatingsystem": "Linux",
+      "screenheight": "100",
+      "screenwidth": "97",
+      "price": "9999997"
+    },
+    {
+      "id": "5QdNHMbtoHcR7n3YJqO6i",
+      "model": "r4r4r4",
+      "makeyear": "2020",
+      "operatingsystem": "Linux",
+      "screenheight": "100",
+      "screenwidth": "97",
+      "price": "9999997"
     }
   ]
 }
