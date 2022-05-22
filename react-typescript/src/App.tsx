@@ -7,8 +7,7 @@ import Heading from './components/Heading';
 import Status from './components/Status';
 import Button from './components/Button';
 import Container from './components/Container';
-import { ThemeContext } from './components/context/themeContextProvider';
-import Box from './components/context/Box';
+
 
 const personName = [{
   first : 'Avinash',
@@ -31,12 +30,10 @@ function App() {
       <Status status='success' />
       <Heading>Please submit the forms</Heading>
       <Button handleClick = { (event,id) => {
-        console.log(event,"hii",id);
+        console.log(event.target,"hii",id);
       }} />
       <Container styles={{border: 0, display: '' }} />
-      <ThemeContext>
-        <Box />
-      </ThemeContext>
+  
     </div>
 
     

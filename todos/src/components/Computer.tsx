@@ -4,17 +4,19 @@ import  Typography from '@mui/material/Typography'
 import  TextField  from '@mui/material/TextField'
 import Box from '@mui/material/Box'
 import  Button  from '@mui/material/Button'
+import Select from '@mui/material/Select'
+import MenuItem from '@mui/material/MenuItem'
 import axios, {AxiosResponse} from 'axios'
 import List from './List'
 
 type FormData = {
     id : string,
     model : string,
-    makeyear: number | null,
+    makeyear: string,
     operatingsystem: string,
-    screenheight: number | null,
-    screenwidth : number| null,
-     price : number | null
+    screenheight: string,
+    screenwidth : string,
+     price : string
 
 
 }
@@ -26,11 +28,11 @@ function Computer() {
     const [formData,setFormData] = useState<FormData>({
     'id' : '',
     'model' : '', 
-   'makeyear': null,
+   'makeyear': '',
 'operatingsystem' : '',
-'screenheight': null,
-'screenwidth' : null,
-'price' : null
+'screenheight': '',
+'screenwidth' : '',
+'price' : ''
     });
 
 
@@ -63,10 +65,23 @@ function Computer() {
         //    console.log(list)
         }
 
+
+    function sortedByID(e:any) {
+      console.log(e.target.value);
+      const by: keyof FormData = e.target.value;
+     
+      setList((perv) => {
+        return [...perv.sort((a,b) => a[by] > b[by] ? 1 : -1)]
+      })
+
+      
+    }
+
         function getData(){
             axios.get('http://localhost:8080/computers')
             .then( (response : AxiosResponse<FormData[]>) => {
                 const   {data}  = response;
+              
                setList([...data]);
                  }); 
         }
@@ -158,6 +173,25 @@ function Computer() {
       <div>
           <List formData={list} />
       </div>
+     <Box>
+        <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    label="Age"
+    onChange={ (e) => {
+      sortedByID(e);
+    }}
+
+  >
+    <MenuItem value={'id'}> ID</MenuItem>
+    <MenuItem value={'model'}> Model</MenuItem>
+    <MenuItem value={'makeyear'}> By Year</MenuItem>
+    <MenuItem value={'operatingsystem'}> Operating System</MenuItem>
+    <MenuItem value={'screenheight'}> Screen Height</MenuItem>
+    <MenuItem value={'screenwidth'}> Screen Width</MenuItem>
+    <MenuItem value={'price'}> By Price</MenuItem>
+  </Select>
+     </Box>
           
     </div>
   )

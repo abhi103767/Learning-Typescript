@@ -3,11 +3,11 @@ type FormProp = {
   formData : {
     id : string,
   model : string,
-  makeyear: number | null,
+  makeyear: string,
   operatingsystem: string,
-  screenheight: number | null,
-  screenwidth : number| null,
-   price : number | null
+  screenheight: string,
+  screenwidth : string,
+   price : string
 
   }[]
   

@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState}from 'react'
 import Input from './Input';
 
 type ButtonProps = {
@@ -7,6 +7,8 @@ type ButtonProps = {
 }
 
 function Button(props:ButtonProps) {
+    const [value,setValue] = useState('')
+    console.log(value)
   return (
       
     <div>
@@ -15,8 +17,10 @@ function Button(props:ButtonProps) {
 }}>
     Button
     </button>
-    <Input value='' handleChange = {
-        (event) => console.log(event)
+    <Input value={value} handleChange = {
+   
+        (event) => console.log(event.target)
+        
     } />
 </div>
   )
