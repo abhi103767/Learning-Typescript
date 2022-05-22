@@ -26,7 +26,7 @@ type FormData = {
 function Computer() {
 
     const [formData,setFormData] = useState<FormData>({
-    'id' : '',
+    'id' : nanoid(),
     'model' : '', 
    'makeyear': '',
 'operatingsystem' : '',
@@ -42,7 +42,7 @@ function Computer() {
 
     useEffect(() => {
         getData()
-    },[])
+    })
 
    console.log(formData)
     function handleChange(e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>):void{
@@ -55,11 +55,9 @@ function Computer() {
     
     }
     function handleClick(e:React.MouseEvent<HTMLButtonElement>){
-  axios.post('http://localhost:8080/computers', {...formData, id : nanoid()}).then(
+  axios.post('http://localhost:8080/computers', formData).then(
                (res) => {
                    console.log(res.data)
-                   getData();
-
                }
            )
         //    console.log(list)
